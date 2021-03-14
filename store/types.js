@@ -1,0 +1,3 @@
+export const GET_MOVIES = 'GET_MOVIES'; 
+export const ADD_FAVORITES = 'ADD_FAVORITES';
+export const EXTRACT_FAVORITES = 'EXTRACT_FAVORITES';

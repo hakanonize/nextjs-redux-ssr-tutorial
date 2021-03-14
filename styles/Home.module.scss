@@ -1,0 +1,32 @@
+
+.poster{
+  width:100%;
+  color: #FFFFFF;
+  height: 50vh;
+  
+  background-repeat: no-repeat;
+  background-size: cover;
+  background: linear-gradient(to right, #F5C518  , #9907facc), url('../public/people-with-popcorn-watching-movie-in-cinema-QZ7BYKJ\ 1.png') no-repeat top center;
+  display:flex;
+  align-items: flex-start;
+  flex-direction: column;
+  .poster_text{
+    font-weight: 500;
+    font-size:65px;
+    
+    p{
+      margin-top:50px;
+      margin-left:100px;
+    }
+  }
+
+  .poster_detail{
+    margin-left:100px;
+    width: 30vw;
+    p{
+     font-weight: 400;
+     font-size:16px;
+    }
+  }
+}
+

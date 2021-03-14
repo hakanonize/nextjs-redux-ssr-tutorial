@@ -1,0 +1,39 @@
+.search_container{
+    display:flex;
+    justify-content:center;
+    background: white;
+    align-items:center;
+    height: 60px;
+    div{
+        margin-left:20px;
+    }
+
+    .type{
+
+        
+        select{background: #636363;}
+
+    }
+    .year {
+        input{
+            background: #636363;
+
+        }
+    }
+
+    .name {
+        input{background: #636363;}
+
+    }
+
+    .search_button {
+        display:flex;
+        border-radius:5px;
+        background: #F5C518;
+        width:70px;
+        justify-content: center;
+        a{
+            color:white;
+        }
+    }
+}

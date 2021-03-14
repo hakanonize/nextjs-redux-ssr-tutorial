@@ -1,65 +1,102 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchMovies,addToFavorites } from '../store/actions/movieAction';
+import { useEffect,useState } from 'react'
+import styles from '../styles/Home.module.scss'
+import Link from 'next/link';
+import Image from 'next/image';
+import Nav from '../components/nav';
+import SearchBar from '../components/searchbar'
+import Layout from "../components/Layout"
+
 
 export default function Home() {
+
+  const dispatch = useDispatch();
+  const movies = useSelector(state => state.movie)
+   
+
+  
+     
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+    <Layout>
+  
+      
+     
+      <Nav/>
+      
+      <div className={styles.poster}>
+        <div className={styles.poster_text}>
+          <p>Welcome to <br></br> </p>
+          <p>MovieUP</p>
         </div>
-      </main>
+        <div className={styles.poster_detail}>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris </p>
+        </div>
+      </div>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+      <SearchBar/>
+      
+      
+      <div className={styles.popular_movies}>
+        <p>Popular Movies</p>
+        <button>View More</button>
+      </div>
+
+      <div className={styles.movie_grid_container}>
+        <div className={styles.movie_grid}>
+            <div className={styles.movie_poster}>
+
+            </div>
+            <div className={styles.movie_details}>
+              <div className={styles.upper_info}>
+
+                <div className={styles.upper_left}>
+                    <div className={styles.imdb_icon}>
+                          IMDB
+                        </div>
+                        <div className={styles.imdb_point}>
+                          <span>8.8 </span>
+                        
+                        </div>
+                  </div>
+                  
+
+                  <div className={styles.upper_right}>
+                       <div>Action</div>
+                       <div>Biography</div>
+                  </div>
+
+                  <div className={styles.movie_year}>
+                    <span> 2019</span>
+                  </div>
+                 
+                  
+              </div>
+             <div className={styles.movie_info}>
+              <div className={styles.movie_title}>
+                <span>The Godfather</span>
+              </div>
+
+              <div className={styles.movie_detail}>
+                <p>The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.</p>
+              </div>
+             </div>
+
+             <div className={styles.movie_footer}>
+               <button onClick={() => dispatch(addToFavorites())}>Add to favorites</button>
+                <p>View Details</p>
+             </div>
+
+            </div>
+
+        </div>
+
+      </div>
+      {/* <h1>{movies.movies[0].Title}</h1> */}
+     
+   
+    </Layout>
   )
 }
