@@ -8,7 +8,7 @@ const nav = () => {
          <a href='/'>
 
          <Image 
-           src='/../public/MovieUP-Logo.png' 
+           src='/public/MovieUP-Logo.png' 
            alt="me" 
            layout="fixed"
            width="216"
@@ -26,7 +26,7 @@ const nav = () => {
         </div>
         <div className={styles.nav_searchbar}>
           <input type="text" className={styles.searchbar} placeholder="Enter movie name here"/>
-          <a href="/"><Image src='/../public/search.png' alt="me" width="20" height="20"></Image></a>
+          <a href="/"><Image src='/public/search.png' alt="me" width="20" height="20"></Image></a>
           
         </div>
         </div>
