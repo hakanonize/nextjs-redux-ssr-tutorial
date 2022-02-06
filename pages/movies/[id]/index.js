@@ -25,7 +25,7 @@ const index = ({movie}) => {
 export const getServerSideProps = async (context) => {
    const name = context.params.id;
    
-    var querystring = await fetch(`http://www.omdbapi.com/?i=${name}&apikey=736934c9`)
+    var querystring = await fetch(`http://www.omdbapi.com/?i=${name}&apikey=`)
   
     const movie = await querystring.json();
     
